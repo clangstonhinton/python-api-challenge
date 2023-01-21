@@ -2,14 +2,8 @@
 Use APIs to extract and analysis weather and geo data
 
 ## Background
-Employed Python scripts to visualize the weather of over 500 cities of varying distances from the equator and created respresentative models of weather characteristics.
+Employed Python scripts and APIs to visualize the weather of over 500 cities of varying distances from the equator. Representative models were created of the weather characteristics across the cities. Extracted the nearest hotel to a select list of "ideal" vacation destinations and plotted the cities on a map.
 
-## Data Description
- - 9 treament drugs and 1 placebo were test in 249 mice over 45 days.
- - One mouse was removed from the data due to duplicate measurements.
- - In the final data set of 248 mice, the ratio of male to female mice was nearly even at 50.4% vs 49.6%, respectively.
- - The final number of observations in the study totaled 1,880 and the observations per drug ranged from 148 to 230, indicating robust sample sizes for each drug tested.
- - The starting measurement for each tumor was ~45 mm3 across all tested treatments.
 
 ## Approach
 
@@ -18,6 +12,12 @@ Employed Python scripts to visualize the weather of over 500 cities of varying d
     - Employed CityPy library to determine the nearest city to each latitude and longitude combination.
     - Created scatter plots to depict the relationship between latitude and weather variables: temperature, humidity, cloudiness and wind speed.
     - Computed linear regression for each relationship for the Northern Hemisphere and Southern Hemisphere using a defined function to compute the plots.
+ - VacationPy
+    - Used geoViews Python library to create map visualizations of the 500 cities from the WeatherPy analysis.
+    - Narrowed the list of cities to under 100 "ideal vacation destinations" based on temperature above 70 degrees and humidity less than 25%.
+    - Used Geoapify API to find the nearest hotel within 10,000 meters of each vacation destination city.
+    - Used geoViews to create map visualizations of the vacation cities and added the nearest hotel to the hover message for each city on the map.
 
-## Files Used for Data Analysis
- - Mouse_metadata.csv
+## APIs Used for Data Analysis
+ - OpenWeatherMap API
+ - Geoapify API
